@@ -1,16 +1,20 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
-  final VoidCallback selectHandeler;
+  final Function() selectHandler;
   final String answerText;
-  Answer(this.selectHandeler, this.answerText, {Key? key}) : super(key: key);
+
+  Answer(this.selectHandler, this.answerText);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       child: RaisedButton(
+        color: Colors.blue,
+        textColor: Colors.white,
         child: Text(answerText),
-        onPressed: selectHandeler,
+        onPressed: selectHandler,
       ),
     );
   }
